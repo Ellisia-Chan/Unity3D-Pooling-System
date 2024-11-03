@@ -45,3 +45,7 @@ if (enemy != null) {
 
 // Return the enemy to the pool after use
 PoolingSystem.Instance.ReturnToPool(enemyPrefab, enemy);
+```
+## Preview
+![image](https://github.com/user-attachments/assets/288ed5b1-9246-40d3-9642-c976125f8c94)
+

@@ -6,9 +6,9 @@ This repository explores different approaches to implementing pooling systems in
 
 The repository contains three branches, each demonstrating a different pooling system implementation:
 
-- **Generic-Pooling-System:**  This branch showcases a generic pooling system implementation that can be used for various object types. 
-- **Custom-Pooling-System:**  This branch presents a custom-built pooling system tailored for specific needs.
-- **Unity-Built-in-Pooling-System:** This branch demonstrates the use of Unity's built-in Object Pooling system.
+- **[Generic-Pooling-System](https://github.com/Ellisia-Chan/Unity3D-Pooling-System/tree/Generic-Pooling-System)**:  This branch showcases a generic pooling system implementation that can be used for various object types. 
+- **[Custom-Pooling-System](https://github.com/Ellisia-Chan/Unity3D-Pooling-System/tree/Custom-Pooling-System)**:  This branch presents a custom-built pooling system tailored for specific needs.
+<!-- - **[Unity-Built-in-Pooling-System](https://github.com/your-username/Unity3D-Pooling-System/tree/Unity-Built-in-Pooling-System)**: This branch demonstrates the use of Unity's built-in Object Pooling system. -->
 
 ### Usage:
 

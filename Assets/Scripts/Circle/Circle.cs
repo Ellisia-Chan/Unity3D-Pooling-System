@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Cube : MonoBehaviour {
+public class Circle : MonoBehaviour {
     
     [SerializeField] private float upForce = 1.0f;
     [SerializeField] private float sideForce = 0.1f;

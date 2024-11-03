@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 352691740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 460248146}
   - component: {fileID: 460248147}
   m_Layer: 0
-  m_Name: Pooling  System Manager
+  m_Name: Pooling System Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,9 +486,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f094622fe5e7004a97600d8655dfffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 1739733946028587568, guid: b4a8e0260ca5c8e419c2ba70b82508a5, type: 3}
-  cubeParent: {fileID: 352691741}
-  amountToPool: 1000
+  pools:
+  - prefab: {fileID: 1739733946028587568, guid: b4a8e0260ca5c8e419c2ba70b82508a5, type: 3}
+    size: 250
+    parent: {fileID: 352691741}
+  - prefab: {fileID: 4409883168929632732, guid: f4a99dc65f585ff4dbf40bef47fc65c6, type: 3}
+    size: 250
+    parent: {fileID: 1479201746}
 --- !u!1 &683696580
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +504,7 @@ GameObject:
   - component: {fileID: 683696581}
   - component: {fileID: 683696582}
   m_Layer: 0
-  m_Name: Cube Spawner Manager
+  m_Name: Spawner Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +537,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d02e1c2504c4243857bc4565ef57c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 1958768781}
+  objectPrefabs:
+  - name: Cube
+    prefab: {fileID: 1739733946028587568, guid: b4a8e0260ca5c8e419c2ba70b82508a5, type: 3}
+  - name: Circle
+    prefab: {fileID: 4409883168929632732, guid: f4a99dc65f585ff4dbf40bef47fc65c6, type: 3}
 --- !u!1 &706838295
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +654,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1569857594}
+  - {fileID: 1479201746}
   - {fileID: 352691741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -758,6 +767,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175441343}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1479201745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1479201746}
+  m_Layer: 0
+  m_Name: Circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1479201746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479201745}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1954916678}
+  m_Father: {fileID: 1091256759}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1569857593
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +830,37 @@ Transform:
   m_Children:
   - {fileID: 1175441344}
   m_Father: {fileID: 1091256759}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1954916677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954916678}
+  m_Layer: 0
+  m_Name: Circle SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1954916678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954916677}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1479201746}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1958768780
 GameObject:
